@@ -3,6 +3,5 @@ data
 mlruns
 mlflow.db
 src/__pycache__
-models/
 outputs/
 commands.txt
