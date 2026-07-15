@@ -15,7 +15,7 @@ from inference import (
 RUSSIAN_LABELS = {"NORMAL": "Норма", "PNEUMONIA": "Пневмония"}
 
 st.set_page_config(page_title="Анализ рентгена лёгких", page_icon="🫁", layout="wide")
-st.title("🫁 Определение пневмонии по рентгеновскому снимку")
+st.title("Определение пневмонии по рентгеновскому снимку")
 st.caption(
     "Модель ResNet‑50 анализирует рентген грудной клетки и показывает области, "
     "повлиявшие на предсказание, с помощью Grad-CAM."
