@@ -78,13 +78,19 @@ def validate(model, dataloader, criterion, device):
     return val_loss, f1
 
 def main():
+    print("Torch version:", torch.version)
+    print("CUDA available:", torch.cuda.is_available())
+    print("CUDA version (torch):", torch.version.cuda)
+    print("Device count:", torch.cuda.device_count())
     BATCH_SIZE = 64
-    EPOCHS = 2
+    EPOCHS = 10
     LR = 1e-4
     DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     TRAIN_DIR = "data/train"
     VAL_DIR = "data/val"
+
+    print(f"Running on {DEVICE} with {torch.get_num_threads()} threads")
 
     train_transform, val_transform = get_transforms()
     train_dataset = ChestXRayDataset(TRAIN_DIR, transform=train_transform)
